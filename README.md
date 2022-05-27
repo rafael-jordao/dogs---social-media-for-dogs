@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# Projeto Final curso ReactJS Completo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto aborda as principais funcionalidades para uma aplicação real.
+
+    - Para inicializar o projeto é necessário rodar o comando: **npm install**,
+    - Em seguida execute o comando: **npm start**
+
 
 ## Available Scripts
 
