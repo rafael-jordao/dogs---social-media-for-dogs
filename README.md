@@ -1,10 +1,6 @@
-# Projeto Final curso ReactJS Completo
+# Final Project ReactJS Course - Origamid
 
-Este projeto aborda as principais funcionalidades para uma aplicação real.
-
-    - Para inicializar o projeto é necessário rodar o comando: **npm install**,
-    - Em seguida execute o comando: **npm start**
-
+This is my final project from the full course of ReactJS by Origamid.
 
 ## Available Scripts
 
