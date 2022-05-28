@@ -8,14 +8,14 @@ import Login from './components/Login/Login';
 
 // https://dogsapi.origamid.dev/json/
 
-function App() {
+const App = () => {
   return (
     <div>
       <BrowserRouter>
         <Header />
         <Routes>
           <Route path="/" element ={<Home />}></Route>
-          <Route path="/login" element ={<Login />}></Route>
+          <Route path="/login/*" element ={<Login />}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
