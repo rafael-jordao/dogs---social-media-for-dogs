@@ -2,12 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Input from '../Forms/Input';
 import Button from '../Forms/Button';
+import useForm from '../Hooks/useForm';
 
 const LoginForm = () => {
-  const [username, setUsername] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  const username = useForm();
+  const password = useForm();
+  const URL = 'https://dogsapi.origamid.dev/json/jwt-auth/v1/token';
 
-  const URL = 'https://dogsapi.origamid.dev/json/jwt-auth/v1/token'
+  console.log(username, password)
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -16,7 +18,7 @@ const LoginForm = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ username, password })
+      body: JSON.stringify()
     }).then((response) => {
       console.log(response);
       return response.json();
@@ -24,8 +26,6 @@ const LoginForm = () => {
       console.log(json)
     });
 
-    setUsername('')
-    setPassword('')
   }
 
   return (
@@ -35,12 +35,14 @@ const LoginForm = () => {
         <Input
           label="Usuário"
           type="text"
-          name="username" />
+          name="username"
+          {...username} />
         <Input
           label="Senha"
           type="password"
-          name="password" />
-       <Button>Entrar</Button>
+          name="password"
+          {...password} />
+        <Button>Entrar</Button>
       </form>
       <Link to="/login/criar">Cadastro</Link>
     </section>
