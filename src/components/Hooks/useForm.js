@@ -5,9 +5,13 @@ const types = {
         regex: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
         message: 'Preencha um email válido',
     },
+    password: {
+        regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
+        message: 'A senha precisa ter 1 cracatere maísculo, 1 minúsculo e 1 dígito. Com no mínimo 8 caracteres',
+    },
 }
 
-const useForm = ( type ) => {
+const useForm = (type) => {
     const [value, setValue] = React.useState('');
     const [error, setError] = React.useState();
 
@@ -27,7 +31,7 @@ const useForm = ( type ) => {
     }
 
     function onChange({ target }) {
-        if(error) validate(target.value)
+        if (error) validate(target.value)
         setValue(target.value);
     }
 
