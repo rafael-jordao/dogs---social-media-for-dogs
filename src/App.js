@@ -6,6 +6,8 @@ import Footer from './components/Footer';
 import Home from './components/Home'
 import Login from './components/Login/Login';
 import { UserStorage } from './UserContext';
+import User from './components/User/User';
+import ProtectedRoute from './components/Helper/ProtectedRoute';
 
 // https://dogsapi.origamid.dev/json/
 
@@ -17,7 +19,12 @@ const App = () => {
           <Header />
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/login/*" element={<Login />}></Route>
+            <Route path="login/*" element={<Login />}></Route>
+            <Route path="conta/*" element={
+              <ProtectedRoute>
+                <User />
+              </ProtectedRoute>}>
+            </Route>
           </Routes>
           <Footer />
         </UserStorage>

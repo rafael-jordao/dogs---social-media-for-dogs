@@ -12,7 +12,7 @@ const LoginCreate = () => {
   const email = useForm('email');
   const password = useForm();
   const { loading, error, request } = useFetch();
-  const { userLogin } = React.useContext(UserContext)
+  const { userLogin } = React.useContext(UserContext);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -22,7 +22,7 @@ const LoginCreate = () => {
       password: password.value,
     });
     const { response } = await request(url, options);
-    if (response.ok) userLogin(username.value, password.value)
+    if (response.ok) userLogin(username.value, password.value);
   }
 
   return (
