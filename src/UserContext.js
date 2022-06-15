@@ -69,7 +69,7 @@ export const UserStorage = ({ children }) => {
             };
         };
         autoLogin();
-    }, [userLogout])
+    }, [userLogout]);
 
     return (
         <UserContext.Provider value={
