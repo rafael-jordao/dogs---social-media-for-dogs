@@ -6,12 +6,12 @@ import { ReactComponent as Statics } from "../../assets/estatisticas.svg";
 import { ReactComponent as AddPhoto } from "../../assets/adicionar.svg";
 import { ReactComponent as Logout } from "../../assets/sair.svg";
 import styles from "./UserHeaderNav.module.css"
+import useMedia from '../Hooks/useMedia';
 
 
 const UserHeaderNav = () => {
-  const [mobile, setMobile] = React.useState(null)
-
   const { userLogout } = React.useContext(UserContext);
+  const mobile = useMedia('(max-width: 40rem)');
 
   return (
     <nav className={styles.nav}>
