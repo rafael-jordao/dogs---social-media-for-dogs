@@ -25,7 +25,7 @@ const UserHeaderNav = () => {
         className={`${styles.mobileButton} ${mobileMenu && styles.mobileButtonActive}`}
         aria-label="Menu"
         onClick={() => setMobileMenu(!mobileMenu)}></button>}
-      <nav className={`${mobile ? styles.navMobile : styles.nav} ${mobileMenu && styles.navMobileActive} animeLeft`}>
+      <nav className={`${mobile ? styles.navMobile : styles.nav} ${mobileMenu && styles.navMobileActive}`}>
         <NavLink to="/conta" end><MyPictures />{mobile && 'Minhas Fotos'}</NavLink>
         <NavLink to="/conta/estatisticas"><Statics />{mobile && 'Estatísticas'}</NavLink>
         <NavLink to="/conta/postar"><AddPhoto />{mobile && 'Adicionar Foto'}</NavLink>

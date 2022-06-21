@@ -16,13 +16,14 @@ const useFetch = () => {
             if (response.ok === false) throw new Error(json.message);
         } catch (err) {
             json = null;
-            setError(err.message);
+            setError(err.message)
+            console.log('deu merda');
         } finally {
             setData(json);
             setLoading(false);
             return { response, json }
         }
-    })
+    },[])
 
     return {
         data,
