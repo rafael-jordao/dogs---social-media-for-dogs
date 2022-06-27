@@ -38,7 +38,7 @@ const UserPhotoPost = () => {
   }
 
   React.useEffect(() => {
-    if(data) navigate('/conta')
+    if (data) navigate('/conta')
   }, [data, navigate])
 
   return (
@@ -49,12 +49,12 @@ const UserPhotoPost = () => {
         <Input label="Idade" type='number' name="idade" {...idade} />
         <input className={styles.file} type="file" name="img" id="img" onChange={handleImgChange} />
         {loading ? <Button disabled>Carregando...</Button> : <Button>Enviar</Button>}
-        <Error error ={error} />
+        <Error error={error} />
       </form>
       <div>
         {img.preview && (
           <div
-            className={styles.preview} 
+            className={styles.preview}
             style={{ backgroundImage: `url(${img.preview})` }}>
           </div>
         )}
