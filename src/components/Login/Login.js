@@ -13,7 +13,7 @@ const Login = () => {
 
   if (login === true) {
     return <Navigate to="/conta" />
-  }
+  } 
 
   return (
     <section className={styles.login}>
