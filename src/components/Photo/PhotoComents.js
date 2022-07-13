@@ -1,9 +1,14 @@
 import React from 'react'
+import { UserContext } from '../../UserContext'
+import PhotoComentsForm from './PhotoComentsForm'
 
-const PhotoComents = ({id, coments}) => {
+const PhotoComents = (props) => {
+    const { login } = React.useContext(UserContext)
 
     return (
-        <div>PhotoComents</div>
+        <div>
+            {login && <PhotoComentsForm id={props.id} /> }
+        </div>
     )
 }
 

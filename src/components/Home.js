@@ -4,7 +4,7 @@ import styles from './Home.module.css'
 
 const Home = () => {
   return (
-    <section className='container mainContainer'>
+    <section className={`container mainContainer ${styles.home}`}>
       <Feed />
     </section>
   )
