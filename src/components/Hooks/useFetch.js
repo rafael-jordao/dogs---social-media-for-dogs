@@ -7,7 +7,7 @@ const useFetch = () => {
 
     const request = React.useCallback(async (url, options) => {
         let response;
-        let json;
+        let json; 
         try {
             setError(null);
             setLoading(true);
@@ -17,11 +17,9 @@ const useFetch = () => {
         } catch (err) {
             json = null;
             setError(err.message)
-            console.log('deu merda');
         } finally {
             setData(json);
             setLoading(false);
-            console.log(json)
             return { response, json }
         }
     },[])
