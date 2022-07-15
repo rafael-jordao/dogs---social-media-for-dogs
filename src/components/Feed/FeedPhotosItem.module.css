@@ -45,4 +45,8 @@
         grid-row: initial;
     }
 
+    .photo {
+        margin-bottom: 5rem ;
+    }
+
 }
