@@ -7,6 +7,7 @@ import useForm from "../Hooks/useForm";
 import useFetch from "../Hooks/useFetch";
 import { useNavigate } from 'react-router-dom';
 import { PHOTO_POST } from '../../api';
+import Loading from '../Helper/Loading';
 
 const UserPhotoPost = () => {
   const navigate = useNavigate();
@@ -42,38 +43,41 @@ const UserPhotoPost = () => {
   }, [data, navigate])
 
   return (
-    <section className={`${styles.photoPost} animeLeft`}>
-      <form onSubmit={handleSubmit}>
-        <Input
-          label="Nome"
-          type="text"
-          name="name" {...nome} />
-        <Input
-          label="Peso"
-          type="number"
-          name="peso" {...peso} />
-        <Input
-          label="Idade"
-          type='number'
-          name="idade" {...idade} />
-        <input
-          className={styles.file}
-          type="file"
-          name="img"
-          id="img"
-          onChange={handleImgChange} />
-        {loading ? <Button disabled>Carregando...</Button> : <Button>Enviar</Button>}
-        <Error error={error} />
-      </form>
-      <div>
-        {img.preview && (
-          <div
-            className={styles.preview}
-            style={{ backgroundImage: `url(${img.preview})` }}>
-          </div>
-        )}
-      </div>
-    </section>
+    <>
+      {loading && <Loading />}
+      <section className={`${styles.photoPost} animeLeft`}>
+        <form onSubmit={handleSubmit}>
+          <Input
+            label="Nome"
+            type="text"
+            name="name" {...nome} />
+          <Input
+            label="Peso"
+            type="number"
+            name="peso" {...peso} />
+          <Input
+            label="Idade"
+            type='number'
+            name="idade" {...idade} />
+          <input
+            className={styles.file}
+            type="file"
+            name="img"
+            id="img"
+            onChange={handleImgChange} />
+          {loading ? <Button disabled>Carregando...</Button> : <Button>Enviar</Button>}
+          <Error error={error} />
+        </form>
+        <div>
+          {img.preview && (
+            <div
+              className={styles.preview}
+              style={{ backgroundImage: `url(${img.preview})` }}>
+            </div>
+          )}
+        </div>
+      </section>
+    </>
   )
 }
 

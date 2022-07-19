@@ -8,8 +8,7 @@ import Login from './components/Login/Login';
 import { UserStorage } from './UserContext';
 import User from './components/User/User';
 import ProtectedRoute from './components/Helper/ProtectedRoute';
-
-// https://dogsapi.origamid.dev/json/
+import Photo from './components/Photo/Photo'
 
 const App = () => {
   return (
@@ -18,13 +17,10 @@ const App = () => {
         <UserStorage>
           <Header />
           <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="login/*" element={<Login />}></Route>
-            <Route path="conta/*" element={
-              <ProtectedRoute>
-                <User />
-              </ProtectedRoute>}>
-            </Route>
+            <Route path="/" element={<Home />}/>
+            <Route path="login/*" element={<Login />}/>
+            <Route path="conta/*" element={<ProtectedRoute><User /></ProtectedRoute>}/>
+            <Route path="foto/:id" element={<Photo />}/>
           </Routes>
           <Footer />
         </UserStorage>

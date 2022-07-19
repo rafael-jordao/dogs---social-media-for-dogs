@@ -14,7 +14,6 @@ const PhotoDelete = ({ id }) => {
         if (confirm) {
             const { url, options } = PHOTO_DELETE(id);
             const response = await request(url, options);
-            console.log(response.response.status)
             if (response.response.status === 200) navigate('/')
         }
 

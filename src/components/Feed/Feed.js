@@ -8,12 +8,14 @@ const Feed = ({ user }) => {
   const [infinite, setInfinite] = React.useState(true);
 
   React.useEffect(() => {
+
     let wait = false
 
     const infiniteScroll = () => {
       if (infinite) {
         const scroll = window.scrollY;
         const height = document.body.offsetHeight - window.innerHeight
+
         if (scroll > height * .75 && !wait) {
           setPages((pages) => [...pages, pages.length + 1]);
           wait = true;
@@ -22,7 +24,7 @@ const Feed = ({ user }) => {
           }, 500);
         }
       }
-    }
+    };
 
     window.addEventListener('wheel', infiniteScroll)
     window.addEventListener('scroll', infiniteScroll)
@@ -31,7 +33,8 @@ const Feed = ({ user }) => {
       window.removeEventListener('wheel', infiniteScroll)
       window.removeEventListener('scroll', infiniteScroll)
     }
-  }, [infinite])
+
+  }, [infinite]);
 
   return (
     <div>
@@ -41,7 +44,6 @@ const Feed = ({ user }) => {
           <FeedPhotos setInfinite={setInfinite} key={page} user={user} page={page} setModalPhoto={setModalPhoto} />
         )
       })}
-
     </div>
   )
 }
