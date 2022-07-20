@@ -11,8 +11,8 @@ const Photo = () => {
     const { data, loading, error, request } = useFetch();
 
     React.useEffect(() => {
-        const { url } = GET_ONE_PHOTO(id);
-        request(url);
+        const { url, options } = GET_ONE_PHOTO(id);
+        request(url, options);
     }, [id, request]);
 
     if(error) return <Error />

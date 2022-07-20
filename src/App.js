@@ -9,18 +9,22 @@ import { UserStorage } from './UserContext';
 import User from './components/User/User';
 import ProtectedRoute from './components/Helper/ProtectedRoute';
 import Photo from './components/Photo/Photo'
+import UserProfile from './components/User/UserProfile';
 
 const App = () => {
   return (
     <div>
       <BrowserRouter>
         <UserStorage>
-          <Header />
+          <Header /> 
           <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="login/*" element={<Login />}/>
+           
             <Route path="conta/*" element={<ProtectedRoute><User /></ProtectedRoute>}/>
+
             <Route path="foto/:id" element={<Photo />}/>
+            <Route path="perfil/:user" element={<UserProfile />}/>
           </Routes>
           <Footer />
         </UserStorage>
