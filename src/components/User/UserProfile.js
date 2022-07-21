@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import Feed from '../Feed/Feed';
 
 const UserProfile = () => {
-  const { user } = useParams();
+  const { user} = useParams();
 
   return (
     <section className="container mainSection">
