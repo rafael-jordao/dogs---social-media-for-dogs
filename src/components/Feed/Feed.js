@@ -1,6 +1,7 @@
 import React from 'react'
 import FeedModal from './FeedModal'
 import FeedPhotos from './FeedPhotos'
+import PropTypes from 'prop-types'
 
 const Feed = ({ user }) => {
   const [modalPhoto, setModalPhoto] = React.useState(null);
@@ -9,7 +10,7 @@ const Feed = ({ user }) => {
 
   React.useEffect(() => {
     let wait = false
-    
+
     const infiniteScroll = () => {
       if (infinite) {
         const scroll = window.scrollY;
@@ -45,6 +46,19 @@ const Feed = ({ user }) => {
       })}
     </div>
   )
+};
+
+Feed.defaultProps = {
+  user: 0
+}
+
+Feed.protoTypes = {
+  user: PropTypes.oneOfType(
+      [
+        PropTypes.string.isRequired,
+        PropTypes.number.isRequired
+      ]
+    ),
 }
 
 export default Feed
