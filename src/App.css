@@ -46,6 +46,16 @@ a {
     color: #333;
 }
 
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh + 10rem);
+}
+
+.AppBody {
+    flex: 1;
+}
+
 .title {
     font-family: var(--type-second);
     line-height: 1;
@@ -74,7 +84,7 @@ a {
     margin: 0 auto;
 }
 
-.mainContainer{
+.mainContainer {
     margin-top: 2rem;
 }
 
